@@ -1,0 +1,48 @@
+{% from "components/link.html" import link %}
+
+{% macro widget(
+title,
+followers_count,
+url,
+username,
+icon,
+background_color,
+icon_color
+)
+%}
+
+{% set background_style = "style=background-color:{};".format(background_color)
+%}
+{% set icon_style = "style=color:{};".format(icon_color) %}
+
+<article
+  {{ background_style }}
+  class="relative bg-red-700 rounded-lg">
+  <span class="z-10 absolute block rotate-45 right-0">
+    <i
+      {{ icon_style }}
+      class="ph-fill ph-{{ icon }} text-8xl"></i>
+  </span>
+
+  <div class="relative z-50 mt-20 p-6 rounded-lg bg-indigo-950">
+    <div class="flex items-center justify-between">
+      <h2
+        class="text-indigo-50 text-xl font-semibold tracking-wider">
+        {{ title }}
+      </h2>
+      {% call link(url) %}
+      <i class="ph ph-link text-lg text-indigo-50"></i>
+      {% endcall %}
+    </div>
+
+    <div class="flex flex-col gap-3 mt-6">
+      <strong class="text-4xl text-indigo-50 tracking-wider">
+        {{ followers_count }}
+        Seguidores
+      </strong>
+      <small class="text-lg text-zinc-400 font-medium">{{ username }}</small>
+    </div>
+  </div>
+</article>
+
+{% endmacro %}
