@@ -1,0 +1,54 @@
+{% extends "layouts/root.html" %}
+
+{% from "components/widget.html" import widget %}
+
+{% block body %}
+
+<main class="max-w-6xl mx-auto flex items-center gap-6">
+  {% include "components/profile.html" %}
+
+  <div class="grid grid-cols-2 gap-6">
+    {{ widget(
+    title="Github",
+    followers_count=2000,
+    url="#",
+    username="@filipedechamps",
+    icon="github-logo",
+    background_color="#701A75",
+    icon_color="#4A044E"
+    )
+    }}
+    {{ widget(
+    title="Twitter",
+    followers_count=2000,
+    url="#",
+    username="@filipedechamps",
+    icon="twitter-logo",
+    background_color="#1D4ED8",
+    icon_color="#1E3A8A"
+    )
+    }}
+    {{ widget(
+    title="Instagram",
+    followers_count=2000,
+    url="#",
+    username="@filipedechamps",
+    icon="instagram-logo",
+    background_color="#FB923C",
+    icon_color="#B45309"
+    )
+    }}
+    {{ widget(
+    title="Github",
+    followers_count=2000,
+    url="#",
+    username="@filipedechamps",
+    icon="youtube-logo",
+    background_color="#DC2626",
+    icon_color="#991B1B"
+    )
+    }}
+  </div>
+</main>
+
+{% endblock body %}
