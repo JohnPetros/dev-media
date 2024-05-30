@@ -1,0 +1,9 @@
+{% macro link(href) %}
+
+<a
+  href="{{ href }}"
+  class="text-zinc-400 hover:text-zinc-100 transition-colors duration-300">
+  {{ caller() }}
+</a>
+
+{% endmacro %}
