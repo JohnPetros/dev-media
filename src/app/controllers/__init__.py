@@ -1,0 +1,3 @@
+from .get_developer_by_id_controller import GetDeveloperByIdController
+
+get_developer_by_id_controller = GetDeveloperByIdController()
