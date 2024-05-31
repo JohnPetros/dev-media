@@ -10,9 +10,9 @@
   <div class="grid grid-cols-2 gap-6">
     {{ widget(
     title="Github",
-    followers_count=2000,
-    url="#",
-    username="@filipedechamps",
+    followers_count="{} Seguidores".format(github_followers_count),
+    url=github_link,
+    username="@" ~ developer.github_username,
     icon="github-logo",
     background_color="#701A75",
     icon_color="#4A044E"
@@ -20,9 +20,9 @@
     }}
     {{ widget(
     title="Twitter",
-    followers_count=2000,
-    url="#",
-    username="@filipedechamps",
+    followers_count="{} Seguidores".format(twitter_followers_count),
+    url=twitter_link,
+    username="@" ~ developer.twitter_username,
     icon="twitter-logo",
     background_color="#1D4ED8",
     icon_color="#1E3A8A"
@@ -30,19 +30,19 @@
     }}
     {{ widget(
     title="Instagram",
-    followers_count=2000,
-    url="#",
-    username="@filipedechamps",
+    followers_count="{} Seguidores".format(instagram_followers_count),
+    url=instagram_link,
+    username="@" ~ developer.instagram_username,
     icon="instagram-logo",
     background_color="#FB923C",
     icon_color="#B45309"
     )
     }}
     {{ widget(
-    title="Github",
-    followers_count=2000,
-    url="#",
-    username="@filipedechamps",
+    title="Youtube",
+    followers_count="{} Inscritos".format(youtube_followers_count),
+    url=youtube_link,
+    username=developer.youtube_channel,
     icon="youtube-logo",
     background_color="#DC2626",
     icon_color="#991B1B"
