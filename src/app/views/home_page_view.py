@@ -7,7 +7,7 @@ from controllers import home_page_controller
 developer_id = getenv("DEVELOPER_ID")
 
 
-def home_view():
+def home_page_view():
     data = home_page_controller.execute(developer_id)
 
     developer = data["developer"]

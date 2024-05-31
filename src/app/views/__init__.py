@@ -1,23 +1,12 @@
-from os import getenv
+from flask import Flask, Blueprint
 
-from flask import Flask, Blueprint, render_template
-
-from controllers import get_developer_by_id_controller
+from .home_page_view import home_page_view
+from .details_page_view import details_page_view
 
 views = Blueprint("view", __name__)
 
-developer_id = getenv("DEVELOPER_ID")
-
-
-@views.route("/")
-def home():
-    developer = get_developer_by_id_controller.execute(1)
-    return render_template("pages/home.html", developer=developer)
-
-
-@views.route("/details")
-def details():
-    return render_template("pages/details.html")
+views.add_url_rule("/", view_func=home_page_view)
+views.add_url_rule("/details", view_func=details_page_view)
 
 
 def init_views(app: Flask):
