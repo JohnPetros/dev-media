@@ -36,9 +36,9 @@ icon_color
     </div>
 
     <div class="flex flex-col gap-3 mt-6">
-      <strong class="text-4xl text-indigo-50 tracking-wider">
-        {{ followers_count }}
-        Seguidores
+      <strong class="text-3xl text-indigo-50 tracking-wider">
+        {{ "Indisponível" if "Indisponível" in followers_count else
+        followers_count }}
       </strong>
       <small class="text-lg text-zinc-400 font-medium">{{ username }}</small>
     </div>
