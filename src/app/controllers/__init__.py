@@ -1,3 +1,3 @@
-from .get_developer_by_id_controller import GetDeveloperByIdController
+from .home_page_controller import HomePageController
 
-get_developer_by_id_controller = GetDeveloperByIdController()
+home_page_controller = HomePageController()
