@@ -1,0 +1,16 @@
+{% macro variation(value, is_up) %}
+
+<p
+  aria-label="{{ value }} a {{ 'mais' if is_up else 'menos' }} que o dia anterior"
+  class="flex items-center gap-1 text-sm font-semibold {{ 'text-green-600' if is_up else 'text-red-600' }}">
+  {% if is_up %}
+  <i class="ph-bold ph-control text-lg translate-y-1"></i>
+  {% else %}
+  <i class="ph-bold ph-caret-down"></i>
+  {% endif %}
+  <span>
+    {{ value }}
+  </span>
+</p>
+
+{% endmacro %}
