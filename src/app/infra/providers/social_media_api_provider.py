@@ -36,9 +36,9 @@ class SocialMediaApiProvider:
         github_stars_count = github_provider.get_stars_count()
 
         return {
-            "github_followers_count": github_followers_count,
-            "github_repos_count": github_repos_count,
-            "github_stars_count": github_stars_count,
+            "github_followers_count": str(github_followers_count),
+            "github_repos_count": str(github_repos_count),
+            "github_stars_count": str(github_stars_count),
         }
 
     def __get_twitter_data(self, twitter_username: str):
@@ -48,9 +48,9 @@ class SocialMediaApiProvider:
         twitter_retweets_count = twitter_provider.get_retweets_count()
 
         return {
-            "twitter_followers_count": twitter_followers_count,
-            "twitter_likes_count": twitter_likes_count,
-            "twitter_retweets_count": twitter_retweets_count,
+            "twitter_followers_count": str(twitter_followers_count),
+            "twitter_likes_count": str(twitter_likes_count),
+            "twitter_retweets_count": str(twitter_retweets_count),
         }
 
     def __get_instagram_data(self, instagram_username: str):
@@ -60,9 +60,9 @@ class SocialMediaApiProvider:
         instagram_likes_count = instagram_provider.get_likes_count()
 
         return {
-            "instagram_followers_count": instagram_followers_count,
-            "instagram_posts_count": instagram_posts_count,
-            "instagram_likes_count": instagram_likes_count,
+            "instagram_followers_count": str(instagram_followers_count),
+            "instagram_posts_count": str(instagram_posts_count),
+            "instagram_likes_count": str(instagram_likes_count),
         }
 
     def __get_youtube_data(self, youtube_channel: str):
@@ -72,7 +72,7 @@ class SocialMediaApiProvider:
         youtube_videos_count = youtube_provider.get_videos_count()
 
         return {
-            "youtube_subscribers_count": youtube_subscribers_count,
-            "youtube_views_count": youtube_views_count,
-            "youtube_videos_count": youtube_videos_count,
+            "youtube_subscribers_count": str(youtube_subscribers_count),
+            "youtube_views_count": str(youtube_views_count),
+            "youtube_videos_count": str(youtube_videos_count),
         }
