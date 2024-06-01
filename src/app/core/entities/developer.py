@@ -5,8 +5,9 @@ from .entity import Entity
 
 @dataclass
 class Developer(Entity):
-    name = None
-    github_username = None
-    twitter_username = None
-    instagram_username = None
-    youtube_channel = None
+    name: str = None
+    github_username: str = None
+    twitter_username: str = None
+    instagram_username: str = None
+    youtube_channel: str = None
+    avatar_url: str = None
