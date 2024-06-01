@@ -1,0 +1,171 @@
+{% extends "layouts/root.html" %}
+
+{% from "components/followers_card.html" import followers_card %}
+{% from "components/card.html" import card %}
+
+{% set container_class = "max-w-6xl mx-auto" %}
+
+{% block body %}
+
+<div>
+  <header class="bg-slate-900/50 h-64 w-full pt-6">
+    <div class="{{ container_class }} flex items-center justify-between w-full">
+      <div>
+        <h1 class="text-4xl text-indigo-50">Detalhes</h1>
+        <strong
+          class="block mt-1 text-slate-400 font-semibold">
+          Total de seguidores: 23.950
+        </strong>
+      </div>
+
+      <a href="/" class="flex items-center gap-1 text-lg text-indigo-50">
+        <i class="ph ph-caret-left"></i>
+        Voltar
+      </a>
+    </div>
+  </header>
+
+  <main class="-translate-y-28">
+    <section class="grid grid-cols-4 gap-6 {{ container_class }} ">
+      {{
+      followers_card(
+      title="@" ~ developer.github_username,
+      count=social_media_record.github_followers_count,
+      icon="github-logo",
+      color=github_logo_color,
+      label="Seguidores",
+      variation_value=12,
+      is_up=True,
+      )}}
+
+      {{
+      followers_card(
+      title="@" ~ developer.twitter_username,
+      count=social_media_record.twitter_followers_count,
+      icon="twitter-logo",
+      color=twitter_logo_color,
+      label="Seguidores",
+      variation_value=12,
+      is_up=True,
+      )}}
+
+      {{
+      followers_card(
+      title="@" ~ developer.instagram_username,
+      count=instagram_followers_count,
+      icon="instagram-logo",
+      color=instagram_logo_color,
+      label="Seguidores",
+      variation_value=12,
+      is_up=True,
+      )}}
+
+      {{
+      followers_card(
+      title=developer.youtube_channel,
+      count=youtube_followers_count,
+      icon="youtube-logo",
+      color=youtube_logo_color,
+      label="Inscritos",
+      variation_value=12,
+      is_up=True,
+      )}}
+
+    </section>
+
+    <section class="{{ container_class }} mt-6">
+      <h2 class="text-2xl text-indigo-50">Resumo - Hoje</h2>
+      <div class="grid grid-cols-4 gap-3 mt-3">
+        {{
+        card(
+        title="Repositórios",
+        count=github_repos_count,
+        icon="github-logo",
+        color=github_logo_color,
+        variation_value=12,
+        is_up=True,
+        )
+        }}
+        {{
+        card(
+        title="Stars",
+        count=github_stars_count,
+        icon="github-logo",
+        color=github_logo_color,
+        variation_value=12,
+        is_up=True,
+        )
+        }}
+
+        {{
+        card(
+        title="Likes",
+        count=twitter_likes_count,
+        icon="twitter-logo",
+        color=twitter_logo_color,
+        variation_value=12,
+        is_up=True,
+        )
+        }}
+
+        {{
+        card(
+        title="Retweets",
+        count=twitter_retweets_count,
+        icon="twitter-logo",
+        color=twitter_logo_color,
+        variation_value=12,
+        is_up=True,
+        )
+        }}
+
+        {{
+        card(
+        title="Publicações",
+        count=instagram_posts_count,
+        icon="instagram-logo",
+        color=instagram_logo_color,
+        variation_value=12,
+        is_up=True,
+        )
+        }}
+
+        {{
+        card(
+        title="Likes",
+        count=instagram_likes_count,
+        icon="instagram-logo",
+        color=instagram_logo_color,
+        variation_value=12,
+        is_up=True,
+        )
+        }}
+
+        {{
+        card(
+        title="Likes",
+        count=youtube_likes_count,
+        icon="youtube-logo",
+        color=youtube_logo_color,
+        variation_value=12,
+        is_up=True,
+        )
+        }}
+
+        {{
+        card(
+        title="Likes",
+        count=youtube_likes_count,
+        icon="youtube-logo",
+        color=youtube_logo_color,
+        variation_value=12,
+        is_up=True,
+        )
+        }}
+      </div>
+    </section>
+  </main>
+
+</div>
+
+{% endblock body %}
