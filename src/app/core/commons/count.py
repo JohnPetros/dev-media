@@ -9,9 +9,15 @@ class Count(Common):
         self.value = value
 
     def format(self):
-        if self.value.isnumeric() and int(self.value) > 1000:
-            self.value = f"{(int(self.value) / 1000):.1f}K"
+        if not self.value.isnumeric():
             return self
 
-        self.value = self.value
+        if int(self.value) >= 1_000_000:
+            self.value = f"{(int(self.value) / 1_000_000):.1f}M"
+            return self
+
+        if int(self.value) >= 1_000:
+            self.value = f"{(int(self.value) / 1_000):.1f}K"
+            return self
+
         return self
