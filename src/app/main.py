@@ -1,7 +1,7 @@
 from flask import Flask
 
-from views import init_views
-from database import init_database
+from infra.views import init_views
+from infra.database import init_database
 
 
 def init_app():
@@ -9,7 +9,7 @@ def init_app():
         __name__, template_folder="../ui/templates", static_folder="../ui/static"
     )
 
-    init_views(app)
     init_database()
+    init_views(app)
 
     return app
