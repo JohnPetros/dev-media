@@ -8,16 +8,17 @@ class DevelopersRepository:
         try:
             row = DeveloperModel.get(id)
 
-            developer = Developer(
-                id=row.id,
-                name=row.name,
-                github_username=row.github_username,
-                twitter_username=row.twitter_username,
-                instagram_username=row.instagram_username,
-                youtube_channel=row.youtube_channel,
-                avatar_url=row.avatar_url,
-            )
-
-            return developer
+            return self.__get_developer_instace(row)
         except Exception:
             return None
+
+    def __get_developer_instace(self, model: DeveloperModel):
+        return Developer(
+            id=model.id,
+            name=model.name,
+            github_username=model.github_username,
+            twitter_username=model.twitter_username,
+            instagram_username=model.instagram_username,
+            youtube_channel=model.youtube_channel,
+            avatar_url=model.avatar_url,
+        )
