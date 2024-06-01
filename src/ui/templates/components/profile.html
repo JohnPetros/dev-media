@@ -13,7 +13,7 @@
   </div>
 
   <div class="p-6 rounded-b-md bg-indigo-950 h-20">
-    {% call link("#") %}
+    {% call link(url_for("view.details_page_view"), is_external=False) %}
     <span class="flex items-center gap-2 text-lg">
       <i class="ph ph-presentation"></i>
       Ver detalhes
