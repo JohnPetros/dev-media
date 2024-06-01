@@ -1,8 +1,10 @@
-{% macro link(href) %}
+{% macro link(href, is_external = True) %}
+
+{% set target = "target=_blank" if is_external else "" %}
 
 <a
+  {{ target }}
   href="{{ href }}"
-  target="_blank"
   class="text-zinc-400 hover:text-zinc-100 transition-colors duration-300">
   {{ caller() }}
 </a>
