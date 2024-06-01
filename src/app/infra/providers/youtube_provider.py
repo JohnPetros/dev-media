@@ -25,7 +25,7 @@ class YoutubeProvider:
         if self.data is None:
             return DEFAULT_COUNT_VALUE
 
-        return int(self.data["items"][0]["statistics"]["subscriberCount"])
+        return self.data["items"][0]["statistics"]["subscriberCount"]
 
     def get_views_count(self):
         if self.data is None:
@@ -37,7 +37,7 @@ class YoutubeProvider:
         if self.data is None:
             return DEFAULT_COUNT_VALUE
 
-        return int(self.data["items"][0]["statistics"]["videoCount"])
+        return self.data["items"][0]["statistics"]["videoCount"]
 
     def get_link(self):
         return f"{self.url}/{self.channel_title}"

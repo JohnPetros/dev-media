@@ -6,7 +6,7 @@ SOCIAL_MEDIA = {
         "background_color": "#4A044E",
     },
     "twitter": {
-        "api_url": "https://ded640a2-f8a1-48cd-980b-58e153f6203c-00-3lzx8qbm17350.riker.replit.dev/user",
+        "api_url": "https://twitter-api-sand.vercel.app/user",
         "url": "https://x.com",
         "color": "#1D4ED8",
         "background_color": "#1E3A8A",
