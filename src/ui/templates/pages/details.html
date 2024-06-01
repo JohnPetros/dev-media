@@ -30,7 +30,7 @@
       {{
       followers_card(
       title="@" ~ developer.github_username,
-      count=social_media_record.github_followers_count,
+      count=social_media_record.github_followers_count.format().get_value(),
       icon="github-logo",
       color=github_logo_color,
       label="Seguidores",
@@ -41,7 +41,7 @@
       {{
       followers_card(
       title="@" ~ developer.twitter_username,
-      count=social_media_record.twitter_followers_count,
+      count=social_media_record.twitter_followers_count.format().get_value(),
       icon="twitter-logo",
       color=twitter_logo_color,
       label="Seguidores",
@@ -52,7 +52,7 @@
       {{
       followers_card(
       title="@" ~ developer.instagram_username,
-      count=instagram_followers_count,
+      count=social_media_record.instagram_followers_count.format().get_value(),
       icon="instagram-logo",
       color=instagram_logo_color,
       label="Seguidores",
@@ -63,7 +63,7 @@
       {{
       followers_card(
       title=developer.youtube_channel,
-      count=youtube_followers_count,
+      count=social_media_record.youtube_subscribers_count.format().get_value(),
       icon="youtube-logo",
       color=youtube_logo_color,
       label="Inscritos",
@@ -79,7 +79,7 @@
         {{
         card(
         title="Repositórios",
-        count=github_repos_count,
+        count=social_media_record.github_repos_count.format().get_value(),
         icon="github-logo",
         color=github_logo_color,
         variation_value=12,
@@ -89,7 +89,7 @@
         {{
         card(
         title="Stars",
-        count=github_stars_count,
+        count=social_media_record.github_stars_count.format().get_value(),
         icon="github-logo",
         color=github_logo_color,
         variation_value=12,
@@ -100,7 +100,7 @@
         {{
         card(
         title="Likes",
-        count=twitter_likes_count,
+        count=social_media_record.twitter_likes_count.format().get_value(),
         icon="twitter-logo",
         color=twitter_logo_color,
         variation_value=12,
@@ -111,7 +111,7 @@
         {{
         card(
         title="Retweets",
-        count=twitter_retweets_count,
+        count=social_media_record.twitter_retweets_count.format().get_value(),
         icon="twitter-logo",
         color=twitter_logo_color,
         variation_value=12,
@@ -122,7 +122,7 @@
         {{
         card(
         title="Publicações",
-        count=instagram_posts_count,
+        count=social_media_record.instagram_posts_count.format().get_value(),
         icon="instagram-logo",
         color=instagram_logo_color,
         variation_value=12,
@@ -133,7 +133,7 @@
         {{
         card(
         title="Likes",
-        count=instagram_likes_count,
+        count=social_media_record.instagram_likes_count.format().get_value(),
         icon="instagram-logo",
         color=instagram_logo_color,
         variation_value=12,
@@ -143,8 +143,8 @@
 
         {{
         card(
-        title="Likes",
-        count=youtube_likes_count,
+        title="Views",
+        count=social_media_record.youtube_views_count.format().get_value(),
         icon="youtube-logo",
         color=youtube_logo_color,
         variation_value=12,
@@ -154,8 +154,8 @@
 
         {{
         card(
-        title="Likes",
-        count=youtube_likes_count,
+        title="Videos",
+        count=social_media_record.youtube_videos_count.format().get_value(),
         icon="youtube-logo",
         color=youtube_logo_color,
         variation_value=12,
