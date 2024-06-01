@@ -9,3 +9,7 @@ class DeveloperModel(Model):
     twitter_username = CharField()
     instagram_username = CharField()
     youtube_channel = CharField()
+    avatar_url = CharField()
+
+    class Meta:
+        table_name = "developers"
