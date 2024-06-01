@@ -68,7 +68,11 @@ class SocialMediaApiProvider:
     def __get_youtube_data(self, youtube_channel: str):
         youtube_provider = YoutubeProvider(youtube_channel)
         youtube_subscribers_count = youtube_provider.get_subscribers_count()
+        youtube_views_count = youtube_provider.get_views_count()
+        youtube_videos_count = youtube_provider.get_videos_count()
 
         return {
             "youtube_subscribers_count": youtube_subscribers_count,
+            "youtube_views_count": youtube_views_count,
+            "youtube_videos_count": youtube_videos_count,
         }
