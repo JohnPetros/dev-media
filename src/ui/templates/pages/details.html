@@ -14,7 +14,10 @@
         <h1 class="text-4xl text-indigo-50">Detalhes</h1>
         <strong
           class="block mt-1 text-slate-400 font-semibold">
-          Total de seguidores: 23.950
+          Total de seguidores:
+          {{
+          social_media_record.get_total_followers_count().format().get_value()
+          }}
         </strong>
       </div>
 
@@ -34,8 +37,7 @@
       icon="github-logo",
       color=github_logo_color,
       label="Seguidores",
-      variation_value=12,
-      is_up=True,
+      variation_value=absolute_variations["github_followers_count"],
       )}}
 
       {{
@@ -45,8 +47,7 @@
       icon="twitter-logo",
       color=twitter_logo_color,
       label="Seguidores",
-      variation_value=12,
-      is_up=True,
+      variation_value=absolute_variations["twitter_followers_count"],
       )}}
 
       {{
@@ -56,8 +57,7 @@
       icon="instagram-logo",
       color=instagram_logo_color,
       label="Seguidores",
-      variation_value=12,
-      is_up=True,
+      variation_value=absolute_variations["instagram_followers_count"],
       )}}
 
       {{
@@ -67,8 +67,7 @@
       icon="youtube-logo",
       color=youtube_logo_color,
       label="Inscritos",
-      variation_value=12,
-      is_up=True,
+      variation_value=absolute_variations["youtube_subscribers_count"],
       )}}
 
     </section>
@@ -82,8 +81,7 @@
         count=social_media_record.github_repos_count.format().get_value(),
         icon="github-logo",
         color=github_logo_color,
-        variation_value=12,
-        is_up=True,
+        variation_value=percentage_variations["github_repos_count"],
         )
         }}
         {{
@@ -92,8 +90,7 @@
         count=social_media_record.github_stars_count.format().get_value(),
         icon="github-logo",
         color=github_logo_color,
-        variation_value=12,
-        is_up=True,
+        variation_value=percentage_variations["github_stars_count"],
         )
         }}
 
@@ -103,8 +100,7 @@
         count=social_media_record.twitter_likes_count.format().get_value(),
         icon="twitter-logo",
         color=twitter_logo_color,
-        variation_value=12,
-        is_up=True,
+        variation_value=percentage_variations["twitter_likes_count"],
         )
         }}
 
@@ -114,8 +110,7 @@
         count=social_media_record.twitter_retweets_count.format().get_value(),
         icon="twitter-logo",
         color=twitter_logo_color,
-        variation_value=12,
-        is_up=True,
+        variation_value=percentage_variations["twitter_retweets_count"],
         )
         }}
 
@@ -125,8 +120,7 @@
         count=social_media_record.instagram_posts_count.format().get_value(),
         icon="instagram-logo",
         color=instagram_logo_color,
-        variation_value=12,
-        is_up=True,
+        variation_value=percentage_variations["instagram_posts_count"],
         )
         }}
 
@@ -136,8 +130,7 @@
         count=social_media_record.instagram_likes_count.format().get_value(),
         icon="instagram-logo",
         color=instagram_logo_color,
-        variation_value=12,
-        is_up=True,
+        variation_value=percentage_variations["instagram_likes_count"],
         )
         }}
 
@@ -147,8 +140,7 @@
         count=social_media_record.youtube_views_count.format().get_value(),
         icon="youtube-logo",
         color=youtube_logo_color,
-        variation_value=12,
-        is_up=True,
+        variation_value=percentage_variations["youtube_views_count"],
         )
         }}
 
@@ -158,8 +150,7 @@
         count=social_media_record.youtube_videos_count.format().get_value(),
         icon="youtube-logo",
         color=youtube_logo_color,
-        variation_value=12,
-        is_up=True,
+        variation_value=percentage_variations["youtube_videos_count"],
         )
         }}
       </div>
