@@ -9,7 +9,7 @@ class CreateSocialMediaRecord:
         try:
             developer = developers_repository.get_by_id(developer_id)
 
-            social_media_api = SocialMediaApiProvider()
+            social_media_api = SocialMediaApiProvider(developer)
             social_media_data = social_media_api.fetch_data()
 
             social_media_record = SocialMediaRecord(
@@ -17,6 +17,6 @@ class CreateSocialMediaRecord:
                 **social_media_data,
             )
 
-            social_media_records_repository.create(social_media_record)
+            social_media_records_repository.create(social_media_record, developer.id)
         except Exception as exception:
             raise exception

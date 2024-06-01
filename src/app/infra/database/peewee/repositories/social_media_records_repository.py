@@ -34,6 +34,7 @@ class SocialMediaRecordsRepository:
             twitter_likes_count=social_media_record.twitter_likes_count,
             twitter_retweets_count=social_media_record.twitter_retweets_count,
             youtube_subscribers_count=social_media_record.youtube_subscribers_count,
-            youtube_likes_count=social_media_record.youtube_likes_count,
+            youtube_views_count=social_media_record.youtube_views_count,
+            youtube_videos_count=social_media_record.youtube_videos_count,
             developer=developer_id,
         )
