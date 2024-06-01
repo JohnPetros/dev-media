@@ -4,7 +4,7 @@ from .models import DeveloperModel, SocialMediaRecordModel
 
 
 class Peewee:
-    def __init__(self) -> None:
+    def run(self):
         try:
             sqlite_database.connect()
             sqlite_database.create_tables([DeveloperModel, SocialMediaRecordModel])

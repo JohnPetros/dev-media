@@ -6,4 +6,5 @@ social_media_records_repository = SocialMediaRecordsRepository()
 
 
 def init_database():
-    Peewee()
+    peewee = Peewee()
+    peewee.run()
