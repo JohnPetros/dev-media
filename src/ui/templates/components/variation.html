@@ -1,16 +1,31 @@
-{% macro variation(value, is_up) %}
+{% macro variation(value, sufix="") %}
+
+{% set has_variation = value | int != 0 %}
+
+{% if has_variation %}
+
+{% set is_variation_up = value | int > 0 %}
 
 <p
-  aria-label="{{ value }} a {{ 'mais' if is_up else 'menos' }} que o dia anterior"
-  class="flex items-center gap-1 text-sm font-semibold {{ 'text-green-600' if is_up else 'text-red-600' }}">
-  {% if is_up %}
+  aria-label="{{ value }} a {{ 'mais' if is_variation_up else 'menos' }} que o dia anterior"
+  class="flex items-center gap-1 text-sm font-semibold {{ 'text-green-600' if is_variation_up else 'text-red-600' }}">
+  {% if is_variation_up %}
   <i class="ph-bold ph-control text-lg translate-y-1"></i>
   {% else %}
   <i class="ph-bold ph-caret-down"></i>
   {% endif %}
   <span>
-    {{ value }}
+    {{ value }}{{ sufix }}
   </span>
 </p>
+
+{% else %}
+
+<p
+  class="flex items-center gap-1 text-xs text-slate-600 font-semibold">
+  Nenhuma variação
+</p>
+
+{% endif %}
 
 {% endmacro %}

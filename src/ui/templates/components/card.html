@@ -1,6 +1,6 @@
 {% from "components/variation.html" import variation %}
 
-{% macro card(title, icon, color, count, variation_value, is_up ) %}
+{% macro card(title, icon, color, count, variation_value) %}
 
 {% set icon_style = "style=color:{};".format(color) %}
 
@@ -16,7 +16,10 @@
     <strong class="text-3xl text-indigo-50 font-semibold">
       {{ count }}
     </strong>
-    {{ variation(value=variation_value, is_up=is_up) }}
+
+    {% if count[0].isnumeric() %}
+    {{ variation(value=variation_value, sufix="%") }}
+    {% endif %}
   </div>
 </div>
 

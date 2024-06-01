@@ -1,7 +1,6 @@
 {% from "components/variation.html" import variation %}
 
-{% macro followers_card(title, count, icon, color, label, variation_value,
-is_up) %}
+{% macro followers_card(title, count, icon, color, label, variation_value) %}
 
 {% set border_style = "style=border-color:{};".format(color)
 %}
@@ -28,7 +27,7 @@ is_up) %}
     </small>
   </div>
 
-  {{ variation(value=variation_value, is_up=is_up) }}
+  {{ variation(variation_value) }}
 </div>
 
 {% endmacro %}
