@@ -2,6 +2,21 @@
 
 {% from "components/widget.html" import widget %}
 
+{% set github_followers_count =
+social_media_record.github_followers_count.format().get_value() %}
+
+{% set twitter_followers_count =
+social_media_record.twitter_followers_count.format().get_value() %}
+
+{% set instagram_followers_count =
+social_media_record.instagram_followers_count.format().get_value() %}
+
+{% set twitter_followers_count =
+social_media_record.twitter_followers_count.format().get_value() %}
+
+{% set youtube_subscribers_count =
+social_media_record.youtube_subscribers_count.format().get_value() %}
+
 {% block body %}
 
 <main class="grid place-content-center h-full">
@@ -11,42 +26,42 @@
     <div class="grid grid-cols-2 gap-6">
       {{ widget(
       title="Github",
-      followers_count="{} Seguidores".format(social_media_record.github_followers_count),
+      followers_count="{} Seguidores".format(github_followers_count),
       url=github_link,
       username="@" ~ developer.github_username,
       icon="github-logo",
-      background_color="#701A75",
-      icon_color="#4A044E"
+      background_color=github_logo_background_color,
+      icon_color=github_logo_color
       )
       }}
       {{ widget(
       title="Twitter",
-      followers_count="{} Seguidores".format(social_media_record.twitter_followers_count),
+      followers_count="{} Seguidores".format(twitter_followers_count),
       url=twitter_link,
       username="@" ~ developer.twitter_username,
       icon="twitter-logo",
-      background_color="#1D4ED8",
-      icon_color="#1E3A8A"
+      background_color=twitter_logo_color,
+      icon_color=twitter_logo_background_color
       )
       }}
       {{ widget(
       title="Instagram",
-      followers_count="{} Seguidores".format(social_media_record.instagram_followers_count),
+      followers_count="{} Seguidores".format(instagram_followers_count),
       url=instagram_link,
       username="@" ~ developer.instagram_username,
       icon="instagram-logo",
-      background_color="#FB923C",
-      icon_color="#B45309"
+      background_color=instagram_logo_color,
+      icon_color=instagram_logo_background_color
       )
       }}
       {{ widget(
       title="Youtube",
-      followers_count="{} Inscritos".format(social_media_record.youtube_subscribers_count),
+      followers_count="{} Inscritos".format(youtube_subscribers_count),
       url=youtube_link,
       username=developer.youtube_channel,
       icon="youtube-logo",
-      background_color="#DC2626",
-      icon_color="#991B1B"
+      background_color=youtube_logo_color,
+      icon_color=youtube_logo_background_color
       )
       }}
     </div>
