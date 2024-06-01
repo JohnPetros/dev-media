@@ -1,6 +1,8 @@
 from os import getenv
 from requests import get
 
+from core.constants import DEFAULT_COUNT_VALUE
+
 from infra.constants import SOCIAL_MEDIA
 
 
@@ -8,8 +10,7 @@ class YoutubeProvider:
     def __init__(self, channel_title) -> None:
         self.api_url = SOCIAL_MEDIA["youtube"]["api_url"]
         self.url = SOCIAL_MEDIA["youtube"]["url"]
-        # self.api_key = getenv("YOUTUBE_API_KEY")
-        self.api_key = "AIzaSyBqNYpiRxil082tSMRneE1A44v1T5hF8yg"
+        self.api_key = getenv("YOUTUBE_API_KEY")
         self.channel_title = channel_title
         self.data = None
 
@@ -22,9 +23,21 @@ class YoutubeProvider:
 
     def get_subscribers_count(self):
         if self.data is None:
-            return "Indisponível"
+            return DEFAULT_COUNT_VALUE
 
         return int(self.data["items"][0]["statistics"]["subscriberCount"])
+
+    def get_views_count(self):
+        if self.data is None:
+            return DEFAULT_COUNT_VALUE
+
+        return int(self.data["items"][0]["statistics"]["viewCount"])
+
+    def get_videos_count(self):
+        if self.data is None:
+            return DEFAULT_COUNT_VALUE
+
+        return int(self.data["items"][0]["statistics"]["videoCount"])
 
     def get_link(self):
         return f"{self.url}/{self.channel_title}"
@@ -34,7 +47,6 @@ class YoutubeProvider:
             f"{self.api_url}/search?key={self.api_key}&part=snippet&q={self.channel_title}&type=video"
         )
         data = response.json()
-        print(data, flush=True)
         channel_id = data["items"][0]["snippet"]["channelId"]
         return channel_id
 

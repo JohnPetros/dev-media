@@ -1,14 +1,12 @@
 from core.entities import Developer
 
-from infra.providers import (
-    GithubProvider,
-    TwitterProvider,
-    InstagramProvider,
-    YoutubeProvider,
-)
+from .github_provider import GithubProvider
+from .twitter_provider import TwitterProvider
+from .instagram_provider import InstagramProvider
+from .youtube_provider import YoutubeProvider
 
 
-class SocialMediaApi:
+class SocialMediaApiProvider:
     def __init__(self, developer: Developer):
         try:
             if not isinstance(developer, Developer):
