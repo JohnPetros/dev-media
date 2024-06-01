@@ -47,3 +47,22 @@ class SocialMediaRecord(Entity):
 
         self.youtube_views_count = Count(self.youtube_views_count)
         self.youtube_videos_count = Count(self.youtube_videos_count)
+
+        if self.created_at:
+            self.created_at = datetime.strptime(
+                self.created_at[:19], "%Y-%m-%d %H:%M:%S"
+            )
+
+    def get_total_followers_count(self):
+        total_count = 0
+
+        for count in [
+            self.github_followers_count.get_value(),
+            self.twitter_followers_count.get_value(),
+            self.instagram_followers_count.get_value(),
+            self.youtube_subscribers_count.get_value(),
+        ]:
+            if count.isnumeric():
+                total_count += int(count)
+
+        return Count(str(total_count))
