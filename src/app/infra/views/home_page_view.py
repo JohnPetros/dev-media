@@ -5,8 +5,7 @@ from flask import render_template
 from core.use_cases import get_page_data
 from infra.constants import SOCIAL_MEDIA, INTERNAL_ERROR_MESSAGE
 
-# developer_id = getenv("DEVELOPER_ID")
-developer_id = 2
+developer_id = getenv("DEVELOPER_ID")
 
 
 def home_page_view():
