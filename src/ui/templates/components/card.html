@@ -4,16 +4,22 @@
 
 {% set icon_style = "style=color:{};".format(color) %}
 
-<div class="bg-slate-900 p-6 rounded-lg">
+<div
+  data-light-mode="bg-indigo-100"
+  class="bg-slate-900 p-6 rounded-lg shadow-sm">
   <div class="flex items-center justify-between">
-    <h3 class="text-slate-400">{{ title }}</h3>
+    <h3
+      data-light-mode="text-slate-800"
+      class="text-slate-400">{{ title }}</h3>
     <i
       {{ icon_style }}
       class="ph-fill ph-{{ icon }} text-2xl"></i>
   </div>
 
   <div class="flex items-center justify-between mt-3">
-    <strong class="text-3xl text-indigo-50 font-semibold">
+    <strong
+      data-light-mode="text-indigo-950"
+      class="text-3xl text-indigo-50 font-semibold">
       {{ count }}
     </strong>
 

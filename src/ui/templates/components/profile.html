@@ -1,20 +1,33 @@
 {% from "components/link.html" import link %}
 
 <div
-  class="flex flex-col rounded-md overflow-hidden bg-indigo-950 h-full w-80">
-  <div class="rounded-md bg-violet-600 p-8 flex-1">
+  data-light-mode="bg-indigo-100"
+  class="flex flex-col rounded-md overflow-hidden bg-indigo-950 md:h-full w-[22rem] lg:w-80">
+  <div
+    class="flex flex-row lg:flex-col items-center justify-between lg:justify-normal lg:items-start rounded-md bg-violet-600 p-8 flex-1">
     <img
       src="{{ developer.avatar_url }}"
       alt="{{ developer.name }}"
-      class="w-28 h-28 rounded-full border-4 border-white" />
+      class="w-20 h-20 lg:w-28 lg:h-28 rounded-full border-4 border-white" />
 
-    <small class="block mt-10 text-lg text-indigo-100">Desenvolvedor</small>
-    <h1 class="text-5xl text-indigo-50 font-medium">{{ developer.name }}</h1>
+    <div>
+      <small
+        class="block lg:mt-10 text-lg text-indigo-100">
+        Desenvolvedor
+      </small>
+      <h1 class="text-2xl lg:text-5xl text-indigo-50 font-medium">
+        {{ developer.name }}
+      </h1>
+    </div>
   </div>
 
-  <div class="p-6 rounded-b-md bg-indigo-950 h-20">
+  <div
+    data-light-mode="bg-indigo-100"
+    class="p-6 rounded-b-md bg-indigo-950 h-20">
     {% call link(url_for("view.details_page_view"), is_external=False) %}
-    <span class="flex items-center gap-2 text-lg">
+    <span
+      data-light-mode="text-indigo-950"
+      class="flex items-center gap-2 text-lg">
       <i class="ph ph-presentation"></i>
       Ver detalhes
     </span>

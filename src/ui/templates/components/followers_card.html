@@ -8,21 +8,27 @@
 
 <div
   {{ border_style }}
-  class="flex flex-col items-center justify-between h-56 py-6 border-t-8 rounded-lg bg-slate-900">
+  data-light-mode="bg-indigo-100"
+  class="flex flex-col items-center justify-between h-56 py-6 border-t-8 rounded-lg bg-slate-900 shadow-sm">
 
   <div class="flex items-center gap-1 justify-between">
     <i
       {{ icon_style }}
       class="ph-fill ph-{{ icon }} text-2xl"></i>
-    <h3 class="text-md text-slate-400">{{ title }}</h3>
+    <h3
+      data-light-mode="text-slate-800"
+      class="text-md text-slate-400">{{ title }}</h3>
   </div>
 
   <div class="flex flex-col gap-1 items-center">
     <strong
+      data-light-mode="text-indigo-950"
       class="{{ 'text-3xl' if 'Indisponível' in count else 'text-5xl' }} text-indigo-50 font-semibold tracking-wider">
       {{ count }}
     </strong>
-    <small class="text-2xl text-slate-600 tracking-widest">
+    <small
+      data-light-mode="text-slate-700"
+      class="text-2xl text-slate-600 tracking-widest">
       {{ label }}
     </small>
   </div>

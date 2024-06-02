@@ -17,26 +17,33 @@ icon_color
 
 <article
   {{ background_style }}
-  class="relative w-[22rem] bg-red-700 rounded-lg">
+  class="relative w-[22rem] rounded-lg">
   <span class="z-10 absolute block rotate-45 right-0">
     <i
       {{ icon_style }}
       class="ph-fill ph-{{ icon }} text-8xl"></i>
   </span>
 
-  <div class="relative z-50 mt-20 p-6 rounded-lg bg-indigo-950">
+  <div
+    data-light-mode="bg-indigo-100"
+    class="relative z-50 mt-20 p-6 rounded-lg bg-indigo-950">
     <div class="flex items-center justify-between">
       <h2
+        data-light-mode="text-slate-900"
         class="text-indigo-50 text-xl font-semibold tracking-wider">
         {{ title }}
       </h2>
       {% call link(url) %}
-      <i class="ph ph-link text-lg text-indigo-50"></i>
+      <i
+        data-light-mode="text-indigo-900"
+        class="ph ph-link text-lg text-indigo-50"></i>
       {% endcall %}
     </div>
 
     <div class="flex flex-col gap-3 mt-6">
-      <strong class="text-3xl text-indigo-50 tracking-wider">
+      <strong
+        data-light-mode="text-slate-950"
+        class="text-3xl text-indigo-50 tracking-wider">
         {{ "Indisponível" if "Indisponível" in followers_count else
         followers_count }}
       </strong>

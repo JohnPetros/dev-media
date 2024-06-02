@@ -3,16 +3,21 @@
 {% from "components/followers_card.html" import followers_card %}
 {% from "components/card.html" import card %}
 
-{% set container_class = "max-w-6xl mx-auto" %}
+{% set container_class = "max-w-6xl mx-auto px-6 md:px-0" %}
 
 {% block body %}
 
 <div>
-  <header class="bg-slate-900/50 h-64 w-full pt-6">
+  <header
+    data-light-mode="bg-slate-200/75"
+    class="bg-slate-900/50 h-64 w-full pt-6">
     <div class="{{ container_class }} flex items-center justify-between w-full">
       <div>
-        <h1 class="text-4xl text-indigo-50">Detalhes</h1>
+        <h1
+          data-light-mode="text-indigo-950"
+          class="text-4xl text-indigo-50">Detalhes</h1>
         <strong
+          data-light-mode="text-slate-600"
           class="block mt-1 text-slate-400 font-semibold">
           Total de seguidores:
           {{
@@ -21,15 +26,22 @@
         </strong>
       </div>
 
-      <a href="/" class="flex items-center gap-1 text-lg text-indigo-50">
-        <i class="ph ph-caret-left"></i>
-        Voltar
-      </a>
+      <div class="flex items-center gap-2">
+        <a
+          data-light-mode="text-indigo-950"
+          href="/"
+          class="flex items-center gap-1 text-lg text-indigo-50">
+          <i class="ph ph-caret-left"></i>
+          Voltar
+        </a>
+        {% include "components/light-mode-toggle.html" %}
+      </div>
     </div>
   </header>
 
   <main class="-translate-y-28">
-    <section class="grid grid-cols-4 gap-6 {{ container_class }} ">
+    <section
+      class="grid grid-cols-1 md:grid-cols-4 gap-6 {{ container_class }} ">
       {{
       followers_card(
       title="@" ~ developer.github_username,
@@ -74,7 +86,8 @@
 
     <section class="{{ container_class }} mt-6">
       <h2 class="text-2xl text-indigo-50">Resumo - Hoje</h2>
-      <div class="grid grid-cols-4 gap-3 mt-3">
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-3 mt-3">
         {{
         card(
         title="Repositórios",
