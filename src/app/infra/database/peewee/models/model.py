@@ -1,8 +1,8 @@
 from peewee import Model as BaseModel
 
-from ..sqlite import sqlite_database
+from ..postgresql import postgresql_database
 
 
 class Model(BaseModel):
     class Meta:
-        database = sqlite_database
+        database = postgresql_database
