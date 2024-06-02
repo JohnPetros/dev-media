@@ -17,17 +17,22 @@ class SocialMediaApiProvider:
             raise exception
 
     def fetch_data(self):
-        github_data = self.__get_github_data(self.developer.github_username)
-        twitter_data = self.__get_twitter_data(self.developer.twitter_username)
-        instagram_data = self.__get_instagram_data(self.developer.instagram_username)
-        youtube_data = self.__get_youtube_data(self.developer.youtube_channel)
+        try:
+            github_data = self.__get_github_data(self.developer.github_username)
+            twitter_data = self.__get_twitter_data(self.developer.twitter_username)
+            instagram_data = self.__get_instagram_data(
+                self.developer.instagram_username
+            )
+            youtube_data = self.__get_youtube_data(self.developer.youtube_channel)
 
-        return {
-            **github_data,
-            **twitter_data,
-            **instagram_data,
-            **youtube_data,
-        }
+            return {
+                **github_data,
+                **twitter_data,
+                **instagram_data,
+                **youtube_data,
+            }
+        except Exception as exception:
+            print(f"Social Media API Error: {exception}")
 
     def __get_github_data(self, github_username: str):
         github_provider = GithubProvider(github_username)
