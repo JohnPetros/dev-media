@@ -20,8 +20,6 @@ def details_page_view():
         absolute_variations = details_page_data["absolute_variations"]
         percentage_variations = details_page_data["percentage_variations"]
 
-        print(percentage_variations)
-
         return render_template(
             "pages/details.html",
             developer=developer,

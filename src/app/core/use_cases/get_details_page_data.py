@@ -41,7 +41,7 @@ class GetDetailsPageData:
             )
 
         for attribute in absolute_variation_attributes:
-            percentage_variations[attribute] = self.__get_variation(
+            absolute_variations[attribute] = self.__get_variation(
                 current_social_media_record=current_social_media_record,
                 yesterday_social_media_record=yesterday_social_media_record,
                 attribute=attribute,
