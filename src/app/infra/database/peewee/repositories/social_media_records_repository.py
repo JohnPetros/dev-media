@@ -29,11 +29,7 @@ class SocialMediaRecordsRepository:
 
     def get_from_yesterday(self, social_media_record: SocialMediaRecord):
         try:
-            yesterday_datetime = (
-                social_media_record.created_at - timedelta(minutes=1),
-            )
-
-            print(social_media_record.developer)
+            yesterday_datetime = social_media_record.created_at - timedelta(minutes=1)
 
             record = (
                 SocialMediaRecordModel.select()
@@ -42,7 +38,7 @@ class SocialMediaRecordsRepository:
                     (DeveloperModel.id == social_media_record.developer.id)
                     & (SocialMediaRecordModel.created_at <= yesterday_datetime)
                 )
-                .order_by(SocialMediaRecordModel.created_at.desc())
+                .order_by(SocialMediaRecordModel.created_at)
                 .limit(1)
             ).first()
 
@@ -52,7 +48,7 @@ class SocialMediaRecordsRepository:
             return self.__get_social_media_record_instance(record)
 
         except Exception as exception:
-            print(exception)
+            print("exception", exception)
             return None
 
     def create(self, social_media_record: SocialMediaRecord, developer_id: int):
