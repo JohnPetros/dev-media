@@ -48,7 +48,7 @@ class SocialMediaRecord(Entity):
         self.youtube_views_count = Count(self.youtube_views_count)
         self.youtube_videos_count = Count(self.youtube_videos_count)
 
-        if self.created_at:
+        if isinstance(self.created_at, str):
             self.created_at = datetime.strptime(
                 self.created_at[:19], "%Y-%m-%d %H:%M:%S"
             )
