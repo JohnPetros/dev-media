@@ -9,8 +9,8 @@ class DevelopersRepository:
             row = DeveloperModel.get(id)
 
             return self.__get_developer_instace(row)
-        except Exception:
-            print(f"Get Developer By Id Error: {row}")
+        except Exception as exception:
+            print(f"Get Developer By Id Error: {exception}")
             return None
 
     def __get_developer_instace(self, model: DeveloperModel):
