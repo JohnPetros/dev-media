@@ -6,7 +6,7 @@ from ..models import DeveloperModel
 class DevelopersRepository:
     def get_by_id(self, id: int):
         try:
-            row = DeveloperModel.get(id)
+            row = DeveloperModel.get(DeveloperModel.id == id)
 
             return self.__get_developer_instace(row)
         except Exception as exception:
