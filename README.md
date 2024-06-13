@@ -87,6 +87,13 @@ Além disso, esse projeto é inspirado em ambos os desafios [Time tracking dashb
 - [x] A cada vez que o usuário recarregar a página, ele deve ser direcionado para a aplicação de outro desenvolvedor.
 - [x] Todas as aplicações devem ter o mesmo peso no load balancing, ou seja todo o número de requests deve ser igualmente distribuído entre elas.
 
+### Banco de dados
+
+- [x] As tabelas deve ser criadas automaticamente ao iniciar a aplicação
+- [x] Os dados referentes aos desenvolvedores devem ser inseridos automaticamente ao iniciar a aplicação
+- [x] As métricas a serem exibidas deve ser reais, ou seja, devem ser providas de serviços externos a aplicação
+- [x] As métricas providas externamente a aplicação devem ser inseridos no banco de dados a cada 10 minutos
+
 ### Light/Dark Mode
 
 - [x] O usuário pode escolher o tema da aplicação (light ou dark) 
@@ -101,25 +108,31 @@ Além disso, esse projeto é inspirado em ambos os desafios [Time tracking dashb
 
 Este projeto foi desenvolvido usando as seguintes tecnologias:
 
-✔️ **[Python](https://www.python.org/)** para programar o backend
+- **[Python](https://www.python.org/)** para programar o backend
 
-✔️ **[Flask](https://flask.palletsprojects.com/en/3.0.x/)** Para ser o servidor web da aplicação
+- **[Flask](https://flask.palletsprojects.com/en/3.0.x/)** Para ser o servidor web da aplicação
 
-✔️ **[Peewee](https://docs.peewee-orm.com/en/latest/)** Para consultar e manipular dados o banco de dados (ORM)
+- **[Peewee](https://docs.peewee-orm.com/en/latest/)** Para consultar e manipular dados o banco de dados (ORM)
 
-✔️ **[Ngnix](https://nginx.org/en/)** para ser o proxy reverso e aplicar o load balancing
+- **[Ngnix](https://nginx.org/en/)** para ser o proxy reverso e aplicar o load balancing
 
-✔️ **[SQLite](https://sqlite.org/)** Para servir como banco de dados de teste
+- **[SQLite](https://sqlite.org/)** Para servir como banco de dados de teste
 
-✔️ **[PostgreSQL](postgresql)** - para servir como banco de dados de produção
+- **[PostgreSQL](postgresql)** - para servir como banco de dados de produção
 
-✔️ **[TailwindCSS](https://tailwindcss.com/)** - para estilizar as templates HTML
+- **[TailwindCSS](https://tailwindcss.com/)** - para estilizar as templates HTML
 
-✔️ **[HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML)** - Para construir os templates da aplicação
+- **[HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML)** - Para construir os templates da aplicação
 
-✔️ **[JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)** - Para fazer  funcionalidade de light/dark mode
+- **[JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)** - Para fazer  funcionalidade de light/dark mode
 
-✔️ **[Docker](https://www.docker.com/)** - para criar e gerenciar os containers do Nginx, das aplicações e do banco de dados
+- **[Docker](https://www.docker.com/)** - para criar e gerenciar os containers do Nginx, das aplicações e do banco de dados
+
+- **[Github Rest API](https://docs.github.com/pt/rest?apiVersion=2022-11-28)** - para buscar dados públicos de um perfil do Github
+
+- **[Rettiwt API](https://docs.github.com/pt/rest?apiVersion=2022-11-28)** - para buscar dados públicos de um perfil do Twitter 
+
+- **[Youtube API](https://developers.google.com/youtube/v3?hl=pt-br)** - para buscar dados públicos de um canal do Youtube
 
 > Para mais detalhes acerca das dependências do projeto, como versões específicas, veja o arquivo [package.json](https://github.com/JohnPetros/dev-media/blob/main/package.json) do projeto.
 
@@ -153,7 +166,7 @@ $ docker compose up
 
 ```
 
-> Muito provavelmente a aplicação estará rodando no endereço http://localhost:5005
+> Muito provavelmente a aplicação estará rodando no endereço http://localhost:8000
 
 ---
 
