@@ -4,16 +4,16 @@
 
 <div align="center">
    <a href="https://github.com/JohnPetros">
-      <img alt="Made by JohnPetros" src="https://img.shields.io/badge/made%20by-JohnPetros-blueviolet">
+    <img alt="Made by JohnPetros" src="https://img.shields.io/badge/made%20by-JohnPetros-blueviolet">
    </a>
    <img alt="GitHub Language Count" src="https://img.shields.io/github/languages/count/JohnPetros/dev-media">
    <a href="https://github.com/JohnPetros/dev-media/commits/main">
-      <img alt="GitHub Last Commit" src="https://img.shields.io/github/last-commit/JohnPetros/dev-media">
+    <img alt="GitHub Last Commit" src="https://img.shields.io/github/last-commit/JohnPetros/dev-media">
    </a>
   </a>
    </a>
    <a href="https://github.com/JohnPetros/dev-media/blob/main/LICENSE.md">
-      <img alt="GitHub License" src="https://img.shields.io/github/license/JohnPetros/dev-media">
+    <img alt="GitHub License" src="https://img.shields.io/github/license/JohnPetros/dev-media">
    </a>
     <img alt="Stargazers" src="https://img.shields.io/github/stars/JohnPetros/dev-media?style=social">
 </div>
@@ -21,7 +21,7 @@
 
 ## 🖥️ Sobre o Projeto
 
-**Dev Media** é um **site web** que informa as métricas do [Github](https://github.com/), [Instagram](https://www.instagram.com/), [Twitter](https://x.com/?lang=pt-br) (eu me recuso a chamar de X) e [Youtube](https://www.youtube.com/?app=desktop&hl=pt) de um desenvolvedor popular na comunidade, sendo **Filipe Deschamps**, **Gustavo Guanabara** ou **Fábio Akita**.
+**Dev Media** é um **site web** que informa as métricas do [Github](https://github.com/), [Instagram](https://www.instagram.com/), [Twitter](https://x.com/?lang=pt-br) (eu me recuso a chamá-lo de X) e [Youtube](https://www.youtube.com/?app=desktop&hl=pt) de um desenvolvedor popular na comunidade, sendo **Filipe Deschamps**, **Gustavo Guanabara** ou **Fábio Akita**.
 
 Na página inicial é exibido a quantidade de seguidores de cada uma das redes sociais do desenvovedor, enquanto na página secundária é exibido isso e mais outras métricas das respectivas plataformas.
 
@@ -29,43 +29,20 @@ O objetivo ao realizar esse projeto foi aprender o conceito de [Proxy Reverso](h
 
 Além disso, esse projeto é inspirado em ambos os desafios [Time tracking dashboard](https://www.frontendmentor.io/challenges/time-tracking-dashboard-UIQ7167Jw) e [Social media dashboard with theme switcher](https://www.frontendmentor.io/challenges/social-media-dashboard-with-theme-switcher-6oY8ozp_H) do [Frontend Mentor](https://www.frontendmentor.io/), uma plataforma online e gratuita para desenvolvedores melhorarem suas habilidades no Frontend.
 
+
 ### ⏹️ Demonstração
 
 <table align="center">
   <tr>
-    <td align="center" width="700">
-    <span>Página inicial<br/></span>
-    <img alt="Home page" src="documentation/images/home.png" alt="Demonstração da landing page" />
-    </td>
-  </tr>
-   <tr>
-    <td align="center" width="700">
-    <span>Página de detalhes<br/></span>
-    <img alt="Home page" src="documentation/images/contact.png" alt="Demonstração da página de contato" />
+    <td align="center">
+    <span>Página inicial<br/><br/></span>
+    <img src="documentation/images/home-page.png" alt="Página inicial" height="450"  />
     </td>
   </tr>
   <tr>
-    <td align="center" width="700">
-    <span>Página de sobre<br/></span>
-    <img alt="Home page" src="documentation/images/about.png" alt="Demonstração da página de sobre" />
-    </td>
-  </tr>
-   <tr>
-    <td align="center" width="700">
-    <span>Página de dashboard<br/></span>
-    <img alt="Home page" src="documentation/images/dashboard.png" alt="Demonstração de dashboard" />
-    </td>
-  </tr>
-   <tr>
-    <td align="center" width="700">
-    <span>Página de tabela<br/></span>
-    <img alt="Home page" src="documentation/images/table.png" alt="Demonstração da página de tabela" />
-    </td>
-  </tr>
-  <tr>
-    <td align="center" width="700">
-    <span>Página de detalhes de professor<br/></span>
-    <img alt="Home page" src="documentation/images/professor-details.jpeg" alt="Demonstração da página que exibe detalhes de um professor específico" />
+    <td align="center">
+    <span>Página de detalhes<br/><br/></span>
+    <img src="documentation/images/details-page.png" alt="Página de detalhes" height="450" />
     </td>
   </tr>
 </table>
@@ -88,23 +65,33 @@ Além disso, esse projeto é inspirado em ambos os desafios [Time tracking dashb
 ### Pagina de detalhes
 
 - [x] Deve ser exibido os widgets da página inicial
-- [x] Deve ser exibido cards sendo eles:
-  - 
+- [x] Deve ser exibido total de seguidores/incritos considerando todas as redes sociais do desenvolvedor
+- [x] Deve ser exibido em forma de cards as seguintes informações:
+  - Quantidade de repositórios no Github 
+  - Quantidade de Stars no Github 
+  - Quantidade de likes no Twitter
+  - Quantidade retweets no Twitter
+  - Quantidade de publicações no Instagram
+  - Quantidade de likes no Instagram
+  - Quantidade de views no Youtube
+  - Quantidade de videos no Youtube
+- [x] Cada widget deve informar a variação absoluta com relação ao dia anterior 
+- [x] Cada card deve informar a variação percentual com relação ao dia anterior
 
 ### Proxy reverso
 
-- [x] Caso o usuário acesse uma rota contendo o nome do desenvolvedor, ex.: `/akita`, ele deve ser redirecionado para a aplicação referente a esse desenvolvedor.
+- [x] Caso o usuário acesse uma rota contendo o nome do desenvolvedor, ex.: `/akita`, ele deve ser redirecionado para a aplicação referente a ao desenvolvedor **Akita**.
 
 ### Loading Balancing
 
 - [x] A cada vez que o usuário recarregar a página, ele deve ser direcionado para a aplicação de outro desenvolvedor.
 - [x] Todas as aplicações devem ter o mesmo peso no load balancing, ou seja todo o número de requests deve ser igualmente distribuído entre elas.
 
-### Light/Dark
+### Light/Dark Mode
 
 - [x] O usuário pode escolher o tema da aplicação (light ou dark) 
-- [x] O padrão deve ser dark mode 
-- [x] O tema escolhido deve ser armazado no navegador de tal forma que mesmo se o usuário recarregar a página o tema escolhido deve ser persistido 
+- [x] O padrão deve ser dark mode
+- [x] O tema escolhido deve ser armazado no navegador de tal forma que mesmo se o usuário recarregar a página o tema escolhido deve ser selecionado automaticamente
 
 ---
 
@@ -117,6 +104,8 @@ Este projeto foi desenvolvido usando as seguintes tecnologias:
 ✔️ **[Python](https://www.python.org/)** para programar o backend
 
 ✔️ **[Flask](https://flask.palletsprojects.com/en/3.0.x/)** Para ser o servidor web da aplicação
+
+✔️ **[Peewee](https://docs.peewee-orm.com/en/latest/)** Para consultar e manipular dados o banco de dados (ORM)
 
 ✔️ **[Ngnix](https://nginx.org/en/)** para ser o proxy reverso e aplicar o load balancing
 
