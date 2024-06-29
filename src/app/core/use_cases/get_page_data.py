@@ -1,31 +1,45 @@
 from core.entities import SocialMediaRecord, Developer
-
-from infra.database import developers_repository, social_media_records_repository
-from infra.providers import SocialMediaApiProvider
+from core.interfaces.repositories import (
+    DevelopersRepositoryInterface,
+    SocialMediaRecordsRepositoryInterface,
+)
+from core.interfaces.providers import SocialMediaAPIProviderInterface
 
 
 class GetPageData:
+    def __init__(
+        self,
+        developers_repository: DevelopersRepositoryInterface,
+        social_media_records_repository: SocialMediaRecordsRepositoryInterface,
+        social_media_api: SocialMediaAPIProviderInterface,
+    ):
+        self.developers_repository = developers_repository
+        self.social_media_records_repository = social_media_records_repository
+        self.social_media_api = social_media_api
+
     def execute(self, developer_id: int):
         try:
-            developer = developers_repository.get_by_id(developer_id)
+            developer = self.developers_repository.get_by_id(developer_id)
 
             if not isinstance(developer, Developer):
                 raise Exception("Developer not found")
 
             social_media_record = (
-                social_media_records_repository.get_last_by_developer_id(developer.id)
+                self.social_media_records_repository.get_last_by_developer_id(
+                    developer.id
+                )
             )
 
             if not isinstance(social_media_record, SocialMediaRecord):
-                social_media_api = SocialMediaApiProvider(developer)
-                social_media_data = social_media_api.fetch_data()
+                self.social_media_api.developer = developer
+                social_media_data = self.social_media_api.fetch_data()
 
                 social_media_record = SocialMediaRecord(
                     developer=developer,
                     **social_media_data,
                 )
 
-                social_media_records_repository.create(
+                self.social_media_records_repository.create(
                     social_media_record, developer.id
                 )
 
