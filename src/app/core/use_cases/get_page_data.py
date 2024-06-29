@@ -39,9 +39,7 @@ class GetPageData:
                     **social_media_data,
                 )
 
-                self.social_media_records_repository.create(
-                    social_media_record, developer.id
-                )
+                self.social_media_records_repository.add(social_media_record)
 
             return {
                 "developer": developer,
