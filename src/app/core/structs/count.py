@@ -1,7 +1,4 @@
-from .common import Common
-
-
-class Count(Common):
+class Count:
     def __init__(self, value: str):
         if not isinstance(value, str):
             raise Exception("Count value must be a string")
@@ -21,3 +18,6 @@ class Count(Common):
             return self
 
         return self
+
+    def get_value(self):
+        return self.value

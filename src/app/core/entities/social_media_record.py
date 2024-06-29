@@ -1,7 +1,7 @@
 from datetime import datetime
 from dataclasses import dataclass
 
-from core.commons import Count
+from core.structs import Count
 
 from .entity import Entity
 from .developer import Developer
