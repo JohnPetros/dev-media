@@ -1,16 +1,21 @@
 from core.entities import SocialMediaRecord
 from core.constants import DEFAULT_COUNT_VALUE, VARIATIONS
-from infra.database import social_media_records_repository
+from core.interfaces.repositories import SocialMediaRecordsRepositoryInterface
 
 
 class GetDetailsPageData:
+    def __init__(
+        self, social_media_records_repository: SocialMediaRecordsRepositoryInterface
+    ) -> None:
+        self.social_media_records_repository = social_media_records_repository
+
     def execute(self, current_social_media_record: SocialMediaRecord):
 
         if not isinstance(current_social_media_record, SocialMediaRecord):
             raise Exception("Current social media record not found")
 
         yesterday_social_media_record = (
-            social_media_records_repository.get_from_yesterday(
+            self.social_media_records_repository.get_from_yesterday(
                 current_social_media_record
             )
         )

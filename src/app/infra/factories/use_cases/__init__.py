@@ -1,0 +1,7 @@
+from .create_social_media_record_factory import CreateSocialMediaRecordFactory
+from .get_page_data_factory import GetPageDataFactory
+from .get_details_page_data_factory import GetDetailsPageDataFactory
+
+create_social_media_record = CreateSocialMediaRecordFactory.create()
+get_page_data = GetPageDataFactory.create()
+get_details_page_data = GetDetailsPageDataFactory.create()
