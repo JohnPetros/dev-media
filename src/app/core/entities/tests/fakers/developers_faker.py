@@ -4,21 +4,20 @@ from core.entities import Developer
 
 
 class DevelopersFaker:
-    def __init__(self):
-        self.faker = Faker()
-
     @staticmethod
-    def create(self):
+    def create():
+        faker = Faker()
+
         return Developer(
-            id=self.faker.random_int(),
-            name=self.faker.name_male(),
-            avatar_url=self.faker.url(),
-            github_username=self.faker.user_name(),
-            youtube_channel=self.faker.user_name(),
-            instagram_username=self.faker.user_name(),
-            twitter_username=self.faker.user_name(),
+            id=faker.random_int(),
+            name=faker.name_male(),
+            avatar_url=faker.url(),
+            github_username=faker.user_name(),
+            twitter_username=faker.user_name(),
+            instagram_username=faker.user_name(),
+            youtube_channel=faker.user_name(),
         )
 
     @staticmethod
-    def create_many(self, count: int = 10):
-        return [self.create() for _ in range(count)]
+    def create_many(count: int = 10):
+        return [DevelopersFaker.create() for _ in range(count)]

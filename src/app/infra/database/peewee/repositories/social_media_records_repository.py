@@ -51,7 +51,7 @@ class SocialMediaRecordsRepository:
             print("exception", exception)
             return None
 
-    def add(self, social_media_record: SocialMediaRecord, developer_id: int):
+    def add(self, social_media_record: SocialMediaRecord):
         SocialMediaRecordModel.create(
             github_followers_count=social_media_record.github_followers_count.get_value(),
             github_stars_count=social_media_record.github_stars_count.get_value(),
@@ -65,7 +65,7 @@ class SocialMediaRecordsRepository:
             youtube_subscribers_count=social_media_record.youtube_subscribers_count.get_value(),
             youtube_views_count=social_media_record.youtube_views_count.get_value(),
             youtube_videos_count=social_media_record.youtube_videos_count.get_value(),
-            developer=developer_id,
+            developer=social_media_record.developer.id,
         )
 
     def __get_social_media_record_instance(self, model: SocialMediaRecordModel):

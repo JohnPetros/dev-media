@@ -6,11 +6,21 @@ class SocialMediaRecordRepositoryMock(SocialMediaRecordsRepositoryInterface):
     _social_media_records: list[SocialMediaRecord] = []
 
     def get_last_by_developer_id(self, id: int):
-        developer = list(
-            filter((lambda developer: developer.id == id, self._social_media_records))
-        )[0]
+        record = list(
+            filter(lambda record: record.developer.id == id, self._social_media_records)
+        )
 
-        return developer
+        if not len(record):
+            return []
+
+        return record[-1]
+
+    def get_from_yesterday(
+        self,
+        social_media_record: SocialMediaRecord,
+    ) -> SocialMediaRecord:
+        return social_media_record
 
     def add(self, social_media_record: SocialMediaRecord):
+        print("repository", social_media_record.developer.name)
         self._social_media_records.append(social_media_record)

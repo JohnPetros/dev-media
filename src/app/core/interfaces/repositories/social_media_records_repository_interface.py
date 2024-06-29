@@ -13,3 +13,6 @@ class SocialMediaRecordsRepositoryInterface(ABC):
     def get_from_yesterday(
         self, social_media_record: SocialMediaRecord
     ) -> SocialMediaRecord: ...
+
+    @abstractmethod
+    def add(self, social_media_record: SocialMediaRecord): ...
