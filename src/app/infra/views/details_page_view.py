@@ -2,7 +2,8 @@ from os import getenv
 
 from flask import render_template
 
-from core.use_cases import get_page_data, get_details_page_data
+from infra.factories.use_cases import get_page_data, get_details_page_data
+
 from infra.constants import SOCIAL_MEDIA, INTERNAL_ERROR_MESSAGE
 
 developer_id = int(getenv("DEVELOPER_ID"))
