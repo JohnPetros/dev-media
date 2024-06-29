@@ -7,12 +7,17 @@ from .youtube_provider import YoutubeProvider
 
 
 class SocialMediaApiProvider:
-    def __init__(self, developer: Developer):
+    @property
+    def developer(self):
+        return self._developer
+
+    @developer.setter
+    def developer(self, new_developer: Developer):
         try:
-            if not isinstance(developer, Developer):
+            if not isinstance(new_developer, Developer):
                 raise Exception("Developer is not provided")
 
-            self.developer = developer
+            self._developer = new_developer
         except Exception as exception:
             raise exception
 
