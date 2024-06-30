@@ -1,7 +1,7 @@
 class Count:
     def __init__(self, value: str):
         if not isinstance(value, str):
-            raise Exception("Count value must be a string")
+            raise Exception("Count value value must be a string")
 
         self.value = value
 
