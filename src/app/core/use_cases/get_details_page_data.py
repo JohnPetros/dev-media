@@ -10,7 +10,6 @@ class GetDetailsPageData:
         self.social_media_records_repository = social_media_records_repository
 
     def execute(self, current_social_media_record: SocialMediaRecord):
-
         if not isinstance(current_social_media_record, SocialMediaRecord):
             raise Exception("Current social media record not found")
 
@@ -72,12 +71,15 @@ class GetDetailsPageData:
             current_value == DEFAULT_COUNT_VALUE
             or yesterday_value == DEFAULT_COUNT_VALUE
         ):
-            return "0"
+            return "0.0"
 
         difference = int(yesterday_value) - int(current_value)
 
         if is_percentage:
-            percentage = difference / int(current_value) * 100
-            return f"{percentage:0.4f}"
+            if int(yesterday_value) == 0:
+                return "0.0"
+
+            percentage = -difference / int(yesterday_value) * 100
+            return f"{percentage:0.1f}"
 
         return str(difference)
