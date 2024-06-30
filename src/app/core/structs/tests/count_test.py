@@ -1,14 +1,15 @@
 from pytest import raises
 
 from core.structs import Count
+from core.errors import ValidationError
 
 
 def describe_count_struct():
     def it_should_throw_a_exception_if_value_is_not_string():
-        with raises(Exception) as exception:
+        with raises(ValidationError) as error:
             Count(42)
 
-        assert str(exception.value) == "Count value value must be a string"
+        assert str(error.value) == "Count value value must be a string"
 
     def it_should_format_value_if_it_is_above_or_equal_to_1K():
         assert Count("1000").format().get_value() == "1.0K"

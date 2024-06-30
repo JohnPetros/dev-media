@@ -4,6 +4,7 @@ from core.interfaces.repositories import (
     SocialMediaRecordsRepositoryInterface,
     DevelopersRepositoryInterface,
 )
+from core.errors import ValueNotProvidedError, EntityNotFoundError
 
 
 class CreateSocialMediaRecord:
@@ -20,12 +21,12 @@ class CreateSocialMediaRecord:
     def execute(self, developer_id: int):
         try:
             if not isinstance(developer_id, int):
-                raise Exception("Developer id is not provided")
+                raise ValueNotProvidedError("Developer id")
 
             developer = self.developers_repository.get_by_id(developer_id)
 
             if not isinstance(developer, Developer):
-                raise Exception("Developer is not found")
+                raise EntityNotFoundError("Developer")
 
             self.social_media_api.developer = developer
             social_media_data = self.social_media_api.fetch_data()

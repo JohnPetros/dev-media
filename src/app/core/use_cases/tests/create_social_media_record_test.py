@@ -8,6 +8,7 @@ from core.use_cases.tests.mocks.repositories import (
     DevelopersRepositoryMock,
 )
 from core.use_cases.tests.mocks.providers import SocialMediaApiProviderMock
+from core.errors import ValueNotProvidedError, EntityNotFoundError
 
 
 def describe_create_social_media_record_use_case():
@@ -38,18 +39,18 @@ def describe_create_social_media_record_use_case():
     def it_should_throw_an_exception_if_any_developer_id_is_not_provided(
         use_case: CreateSocialMediaRecord,
     ):
-        with raises(Exception) as exception:
+        with raises(ValueNotProvidedError) as error:
             use_case.execute(developer_id=None)
 
-        assert str(exception.value) == "Developer id is not provided"
+        assert str(error.value) == "Developer id value is not provided"
 
     def it_should_throw_exception_if_there_is_no_developer_found(
         use_case: CreateSocialMediaRecord,
     ):
-        with raises(Exception) as exception:
+        with raises(EntityNotFoundError) as error:
             use_case.execute(developer_id=1)
 
-        assert str(exception.value) == "Developer is not found"
+        assert str(error.value) == "Developer entity is not found"
 
     def it_should_add_social_media_record_from_api(
         use_case: CreateSocialMediaRecord,

@@ -1,7 +1,10 @@
+from core.errors import ValidationError
+
+
 class Count:
     def __init__(self, value: str):
         if not isinstance(value, str):
-            raise Exception("Count value value must be a string")
+            raise ValidationError("Count value value must be a string")
 
         self.value = value
 
