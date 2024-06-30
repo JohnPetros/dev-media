@@ -104,7 +104,7 @@ Além disso, esse projeto é inspirado em ambos os desafios [Time tracking dashb
 
 ## ⚙️ Arquitetura
 
-## 🛠️ Tecnologias, ferramentas e serviços externos
+### 🛠️ Tecnologias, ferramentas e serviços externos
 
 Este projeto foi desenvolvido usando as seguintes tecnologias:
 
@@ -167,6 +167,16 @@ $ docker compose up
 ```
 
 > Muito provavelmente a aplicação estará rodando no endereço http://localhost:8000
+
+---
+
+### 🧪 Rodando os testes automatizados
+
+```bash
+
+python -m pytest src/app/core
+
+```
 
 ---
 
