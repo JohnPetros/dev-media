@@ -1,7 +1,7 @@
 from pytest import raises, fixture
 
 from core.use_cases import CreateSocialMediaRecord
-from core.entities.tests.fakers import DevelopersFaker, SocialMediaRecordsFaker
+from core.entities.tests.fakers import DevelopersFaker
 
 from core.use_cases.tests.mocks.repositories import (
     SocialMediaRecordRepositoryMock,
