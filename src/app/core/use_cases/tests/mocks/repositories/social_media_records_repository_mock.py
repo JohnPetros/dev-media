@@ -11,7 +11,7 @@ class SocialMediaRecordRepositoryMock(SocialMediaRecordsRepositoryInterface):
         )
 
         if not len(record):
-            return []
+            return None
 
         return record[-1]
 
@@ -22,5 +22,4 @@ class SocialMediaRecordRepositoryMock(SocialMediaRecordsRepositoryInterface):
         return social_media_record
 
     def add(self, social_media_record: SocialMediaRecord):
-        print("repository", social_media_record.developer.name)
         self._social_media_records.append(social_media_record)

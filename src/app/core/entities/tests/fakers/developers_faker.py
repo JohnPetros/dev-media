@@ -17,7 +17,3 @@ class DevelopersFaker:
             instagram_username=faker.user_name(),
             youtube_channel=faker.user_name(),
         )
-
-    @staticmethod
-    def create_many(count: int = 10):
-        return [DevelopersFaker.create() for _ in range(count)]

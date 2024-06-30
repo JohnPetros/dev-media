@@ -5,9 +5,6 @@ from flask import render_template
 from infra.factories.use_cases import get_page_data
 from infra.constants import SOCIAL_MEDIA, INTERNAL_ERROR_MESSAGE
 
-from faker import Faker
-
-
 developer_id = int(getenv("DEVELOPER_ID"))
 
 
