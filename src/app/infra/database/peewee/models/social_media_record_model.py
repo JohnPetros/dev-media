@@ -9,7 +9,9 @@ from .developer_model import DeveloperModel
 
 
 class SocialMediaRecordModel(Model):
-    developer = ForeignKeyField(DeveloperModel, backref="social_media_records")
+    developer = ForeignKeyField(
+        DeveloperModel, backref="social_media_records", on_delete="CASCADE"
+    )
 
     github_followers_count = CharField(default=DEFAULT_COUNT_VALUE)
     twitter_followers_count = CharField(default=DEFAULT_COUNT_VALUE)
