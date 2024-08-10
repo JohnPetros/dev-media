@@ -36,7 +36,7 @@ Além disso, esse projeto é inspirado em ambos os desafios [Time tracking dashb
   <tr>
     <td align="center">
     <span>Página inicial<br/><br/></span>
-    <img src="documentation/images/home-page.png" alt="Página inicial" height="500"  />
+    <img src="documentation/images/home-page.png" alt="Página inicial" height="420"  />
     </td>
   </tr>
   <tr>
